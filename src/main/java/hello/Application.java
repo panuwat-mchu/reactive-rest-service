@@ -1,6 +1,7 @@
 package hello;
 
 import hello.domain.Role;
+import hello.domain.RoleName;
 import hello.domain.User;
 import hello.user.UserService;
 import org.springframework.boot.CommandLineRunner;
@@ -28,10 +29,10 @@ public class Application {
 	@Bean
 	CommandLineRunner run(UserService userService) {
 		return  args -> {
-			userService.saveRole(new Role(null, "ROLE_USER"));
-			userService.saveRole(new Role(null, "ROLE_MANAGER"));
-			userService.saveRole(new Role(null, "ROLE_ADMIN"));
-			userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
+			userService.saveRole(new Role(null, RoleName.ROLE_USER));
+			userService.saveRole(new Role(null, RoleName.ROLE_MANAGER));
+			userService.saveRole(new Role(null, RoleName.ROLE_ADMIN));
+			userService.saveRole(new Role(null, RoleName.ROLE_SUPER_ADMIN));
 
 			userService.saveUser(new User(null, "John Travolta", "john", "1234", new ArrayList<>()));
 			userService.saveUser(new User(null, "Will Smith", "will", "1234", new ArrayList<>()));
